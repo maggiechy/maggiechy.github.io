@@ -39,7 +39,6 @@ library(e1071)
 library(caret)
 library(NLP)
 library(tm)
-
 data(iris)
 ```
 
