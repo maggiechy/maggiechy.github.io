@@ -27,39 +27,12 @@ model<-svm(x,y,type='one-classification')
 print(model)
 summary(model)
 ```
-***
-Call:
-svm.default(x = x, y = y, type = "one-classification")
-
-
-Parameters:
-   SVM-Type:  one-classification 
- SVM-Kernel:  radial 
-      gamma:  0.25 
-         nu:  0.5 
-
-Number of Support Vectors:  28
-
-Call:
-svm.default(x = x, y = y, type = "one-classification")
-
-
-Parameters:
-   SVM-Type:  one-classification 
- SVM-Kernel:  radial 
-      gamma:  0.25 
-         nu:  0.5 
-
-Number of Support Vectors:  28
-
-Number of Classes: 1
-
-***
 
 ```r
 #test on the whole set
 predict(model,subset(iris,select=-Species))
 ```
+***
 
 2. A more elaborate model.
 
@@ -114,44 +87,10 @@ confTest<-table(Predicted=ocsvm.predtest,Reference=testLabels)
 
 confusionMatrix(confTest,positive='TRUE')
 ```
-***
-    Confusion Matrix and Statistics
-          Reference
-    Predicted FALSE TRUE
-      FALSE    97    7
-      TRUE      3   11  
-    Accuracy : 0.9153          
-    95% CI : (0.8497, 0.9586)
-    No Information Rate : 0.8475 
-    P-Value [Acc > NIR] : 0.02154                                       
-    Kappa : 0.6394                                                   
-    Mcnemar's Test P-Value : 0.34278        
-    Sensitivity : 0.61111         
-    Specificity : 0.97000         
-    Pos Pred Value : 0.78571         
-    Neg Pred Value : 0.93269         
-    Prevalence : 0.15254         
-    Detection Rate : 0.09322         
-    Detection Prevalence : 0.11864         
-    Balanced Accuracy : 0.79056                                   
-    'Positive' Class : TRUE
-
-***
 
 ```r
 #apply the model to the test set
 print(confTrain)
 print(confTest)
 ```
-***
-         Reference
-Predicted TRUE
-    FALSE    8
-    TRUE    24
-         Reference
-Predicted FALSE TRUE
-    FALSE    97    7
-    TRUE      3   11
-    
-***
 See the test dataset prediction result, the accuracy is 94.07% and there are totally 3+4=7 wrong-predicted data. 
