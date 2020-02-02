@@ -48,10 +48,10 @@ print(iris$SpeciesClass)
 ```r
 trainPositive<-subset(iris,SpeciesClass=="TRUE")
 testNegative<-subset(iris,SpeciesClass=="FALSE")
-
+```
+```r
 # 60% of the "TRUE" dataset is made training set
 inTrain<-createDataPartition(1:nrow(trainPositive),p=0.6,list=FALSE)
-
 trainpredictors<-trainPositive[inTrain,1:4]
 trainLabels<-trainPositive[inTrain,6]
 ```
