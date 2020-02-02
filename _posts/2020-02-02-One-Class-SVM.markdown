@@ -27,14 +27,12 @@ model<-svm(x,y,type='one-classification')
 print(model)
 summary(model)
 ```
-
 ```r
 #test on the whole set
 predict(model,subset(iris,select=-Species))
 ```
 
 2. A more elaborate model.
-
 ```r
 library(e1071)
 library(caret)
@@ -42,13 +40,11 @@ library(NLP)
 library(tm)
 data(iris)
 ```
-
 ```r
 iris$SpeciesClass[iris$Species=="versicolor"] <- "TRUE"
 iris$SpeciesClass[iris$Species!="versicolor"] <- "FALSE"
 print(iris$SpeciesClass)
 ```
-
 ```r
 trainPositive<-subset(iris,SpeciesClass=="TRUE")
 testNegative<-subset(iris,SpeciesClass=="FALSE")
@@ -59,7 +55,6 @@ inTrain<-createDataPartition(1:nrow(trainPositive),p=0.6,list=FALSE)
 trainpredictors<-trainPositive[inTrain,1:4]
 trainLabels<-trainPositive[inTrain,6]
 ```
-
 ```r
 # 40% of the "TRUE" data and all "FALSE" data are made test set
 testPositive<-trainPositive[-inTrain,]
@@ -68,7 +63,6 @@ test<-rbind(testPositive,testNegative)
 testpredictors<-test[,1:4]
 testLabels<-test[,6]
 ```
-
 ```r
 #one-class svm model
 ocsvm.model<-svm(trainpredictors,y=NULL,
@@ -86,7 +80,6 @@ confTest<-table(Predicted=ocsvm.predtest,Reference=testLabels)
 
 confusionMatrix(confTest,positive='TRUE')
 ```
-
 ```r
 #apply the model to the test set
 print(confTrain)
