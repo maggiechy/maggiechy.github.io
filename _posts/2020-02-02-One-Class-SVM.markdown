@@ -14,12 +14,12 @@ For example, we extract the characteristics of human's normal reactions in the b
 The following is the use of one-class SVM on iris dataset.
 
 1. A general ocsvm model.
-```{r}
+```r
 library(e1071)
 data(iris)
 data<-iris
 ```
-```{r}
+```r
 data<-subset(data,Species=='versicolor')
 x<-subset(data,select=-Species)#make x variables
 y<-data$Species#make y variable
@@ -27,13 +27,13 @@ model<-svm(x,y,type='one-classification')
 print(model)
 summary(model)
 ```
-```{r}
+```r
 #test on the whole set
 predict(model,subset(iris,select=-Species))
 ```
 
 2. A more elaborate model.
-```{r}
+```r
 library(e1071)
 library(caret)
 library(NLP)
@@ -45,7 +45,7 @@ iris$SpeciesClass[iris$Species!="versicolor"] <- "FALSE"
 print(iris$SpeciesClass)
 ```
 
-```{r}
+```r
 trainPositive<-subset(iris,SpeciesClass=="TRUE")
 testNegative<-subset(iris,SpeciesClass=="FALSE")
 
@@ -56,7 +56,7 @@ trainpredictors<-trainPositive[inTrain,1:4]
 trainLabels<-trainPositive[inTrain,6]
 ```
 
-```{r}
+```r
 # 40% of the "TRUE" data and all "FALSE" data are made test set
 testPositive<-trainPositive[-inTrain,]
 test<-rbind(testPositive,testNegative)
@@ -65,7 +65,7 @@ testpredictors<-test[,1:4]
 testLabels<-test[,6]
 ```
 
-```{r}
+```r
 #one-class svm model
 ocsvm.model<-svm(trainpredictors,y=NULL,
                type='one-classification',
@@ -83,7 +83,7 @@ confTest<-table(Predicted=ocsvm.predtest,Reference=testLabels)
 confusionMatrix(confTest,positive='TRUE')
 ```
 
-```{r}
+```r
 #apply the model to the test set
 print(confTrain)
 print(confTest)
