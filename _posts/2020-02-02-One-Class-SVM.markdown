@@ -32,7 +32,6 @@ summary(model)
 #test on the whole set
 predict(model,subset(iris,select=-Species))
 ```
-***
 
 2. A more elaborate model.
 
