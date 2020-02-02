@@ -33,6 +33,7 @@ predict(model,subset(iris,select=-Species))
 ```
 
 2. A more elaborate model.
+
 ```r
 library(e1071)
 library(caret)
@@ -40,6 +41,9 @@ library(NLP)
 library(tm)
 
 data(iris)
+```
+
+```r
 iris$SpeciesClass[iris$Species=="versicolor"] <- "TRUE"
 iris$SpeciesClass[iris$Species!="versicolor"] <- "FALSE"
 print(iris$SpeciesClass)
