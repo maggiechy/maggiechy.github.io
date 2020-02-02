@@ -53,6 +53,7 @@ Parameters:
 Number of Support Vectors:  28
 
 Number of Classes: 1
+
 ***
 
 ```r
@@ -114,33 +115,29 @@ confTest<-table(Predicted=ocsvm.predtest,Reference=testLabels)
 confusionMatrix(confTest,positive='TRUE')
 ```
 ***
-Confusion Matrix and Statistics
+    Confusion Matrix and Statistics
+          Reference
+    Predicted FALSE TRUE
+      FALSE    97    7
+      TRUE      3   11  
+    Accuracy : 0.9153          
+    95% CI : (0.8497, 0.9586)
+    No Information Rate : 0.8475 
+    P-Value [Acc > NIR] : 0.02154                                       
+    Kappa : 0.6394                                                   
+    Mcnemar's Test P-Value : 0.34278        
+    Sensitivity : 0.61111         
+    Specificity : 0.97000         
+    Pos Pred Value : 0.78571         
+    Neg Pred Value : 0.93269         
+    Prevalence : 0.15254         
+    Detection Rate : 0.09322         
+    Detection Prevalence : 0.11864         
+    Balanced Accuracy : 0.79056                                   
+    'Positive' Class : TRUE
 
-         Reference
-Predicted FALSE TRUE
-    FALSE    97    7
-    TRUE      3   11
-                                          
-               Accuracy : 0.9153          
-                 95% CI : (0.8497, 0.9586)
-    No Information Rate : 0.8475          
-    P-Value [Acc > NIR] : 0.02154         
-                                          
-                  Kappa : 0.6394          
-                                          
- Mcnemar's Test P-Value : 0.34278         
-                                          
-            Sensitivity : 0.61111         
-            Specificity : 0.97000         
-         Pos Pred Value : 0.78571         
-         Neg Pred Value : 0.93269         
-             Prevalence : 0.15254         
-         Detection Rate : 0.09322         
-   Detection Prevalence : 0.11864         
-      Balanced Accuracy : 0.79056         
-                                          
-       'Positive' Class : TRUE
 ***
+
 ```r
 #apply the model to the test set
 print(confTrain)
@@ -155,5 +152,6 @@ Predicted TRUE
 Predicted FALSE TRUE
     FALSE    97    7
     TRUE      3   11
+    
 ***
 See the test dataset prediction result, the accuracy is 94.07% and there are totally 3+4=7 wrong-predicted data. 
