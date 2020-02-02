@@ -59,7 +59,6 @@ trainLabels<-trainPositive[inTrain,6]
 # 40% of the "TRUE" data and all "FALSE" data are made test set
 testPositive<-trainPositive[-inTrain,]
 test<-rbind(testPositive,testNegative)
-
 testpredictors<-test[,1:4]
 testLabels<-test[,6]
 ```
