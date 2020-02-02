@@ -69,14 +69,11 @@ ocsvm.model<-svm(trainpredictors,y=NULL,
                nu=0.10,
                scale=TRUE,
                kernel="radial")
-
 #predict the trainging dataset and the test dataset
 ocsvm.predtrain<-predict(ocsvm.model,trainpredictors)
 ocsvm.predtest<-predict(ocsvm.model,testpredictors)
-
 confTrain<-table(Predicted=ocsvm.predtrain,Reference=trainLabels)
 confTest<-table(Predicted=ocsvm.predtest,Reference=testLabels)
-
 confusionMatrix(confTest,positive='TRUE')
 ```
 ```r
