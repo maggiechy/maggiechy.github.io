@@ -9,7 +9,7 @@ The support vector machine (SVM) is a supervised learning method that generates 
 
 The mapping function can be either a classification function, say, the category of the input data, or a regression function. For classification, nonlinear kernel functions are used to transform input data to a high-dimensional feature space in which the input data become more separable compared to the original input space. 
 
-See more [information](http://cs229.stanford.edu/notes/cs229-notes3.pdf)about svm.
+See more [information](http://cs229.stanford.edu/notes/cs229-notes3.pdf) about svm.
 
 The following is about the general SVM used on iris dataset.
 
@@ -51,6 +51,7 @@ pred <- predict(newm,x)
 table(pred,y)
 ```
 This model predicts all setosa flowers correctly; 48 of the versicolor flowers are correect while 2 of them are categorized into virginica; 48 of the virginica flowers are correect while 2 of them are categorized into versicolor. 
+
 
 2. A more comprehensive svm model
 ```r
