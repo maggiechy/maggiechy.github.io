@@ -13,7 +13,7 @@ See more [information](http://cs229.stanford.edu/notes/cs229-notes3.pdf) about s
 
 The following is about the general SVM used on iris dataset.
 
-1. A simple svm model
+**A simple svm model**
 ```r
 library(e1071)
 data(iris)
@@ -53,7 +53,7 @@ table(pred,y)
 This model predicts all setosa flowers correctly; 48 of the versicolor flowers are correect while 2 of them are categorized into virginica; 48 of the virginica flowers are correect while 2 of them are categorized into versicolor. 
 
 
-2. A more comprehensive svm model
+**A more comprehensive svm model**
 ```r
 #x---feature variable, data except iris 5th column (Species)
 x = iris[,-5]
