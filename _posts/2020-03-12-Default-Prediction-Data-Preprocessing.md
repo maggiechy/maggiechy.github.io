@@ -4,6 +4,7 @@ title:  "Default Prediction: Data Preprocessing"
 date:   2020-03-12 
 categories: jekyll update
 ---
+Default Prediction Part I: Data Cleaning and Preprocessing
 
 1. Load Data and do some Research
 ```r
